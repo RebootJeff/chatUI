@@ -1,5 +1,5 @@
 angular.module('chatUIApp')
-  .factory('FakeMsgData', function() {
+  .service('FakeMsgData', function() {
     'use strict';
     var data = [
       {
@@ -22,13 +22,11 @@ angular.module('chatUIApp')
       }
     ];
 
-    return {
-      getData: function(){
-        return data;
-      },
+    this.getData = function(){
+      return data;
+    };
 
-      addMsg: function(msg){
-        data.push(msg);
-      }
+    this.addMsg = function(msg){
+      data.push(msg);
     };
   });
