@@ -1,13 +1,13 @@
 <section class="msgs-wrapper">
-  <section class="msg-group" ng-repeat="msgGroup in msgGroups">
-    <ul class="msgs-list">
+  <section class="msg-group" ng-repeat="msgGroup in msgGroups | orderBy:['date', 'time']">
+    <ul class="msgs-list  | orderBy:['date', 'time']">
       <li ng-repeat="msg in msgGroup.msgs">
         {{msg.date}}, {{msg.time}} - {{msg.text}}
       </li>
     </ul>
     <div class="author-info">
       <img ng-src="msgGroup.author.avatar" class="avatar">
-      <p class="author-name">{{msgGroup.author.username}}</p>
+      <span class="author-name">{{msgGroup.author.username}}</span>
     </div>
   </section>
 </section>
