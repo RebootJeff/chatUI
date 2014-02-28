@@ -1,4 +1,4 @@
-angular.module('jingleGridApp')
+angular.module('chatUIApp')
   .controller('NavbarCtrl', function ($scope, $location, UserAuthService) {
     'use strict';
 
