@@ -5,8 +5,9 @@ This repo provides code for a GUI meant to display chat messages. There is no co
 ## Usage
 
 1. Clone the repo: `git clone https://github.com/RebootJeff/chatUI.git`
-2. Install dependencies: `bower install`
-3. Open index.html in your favorite browser
+2. Direct your terminal: `cd path/to/local/repo/chatUI`
+3. Install dependencies: `bower install`
+4. Run a local server: `python -m SimpleHTTPServer`
 
 ## Tech Stack
 
@@ -18,3 +19,11 @@ This repo provides code for a GUI meant to display chat messages. There is no co
 ### Tools
 
 - Bower
+
+## Development Decisions
+
+### No Router
+This is a simple GUI with only one true view. If a login page and all that good stuff were to be added, then I'd add a router.
+
+### ngInclude
+To inject some partials, I'm using ng-include. Due to CORS policies, ng-include and the `file://` protocol are incompatible. This means you can't play with Chat UI by simply opening `index.html` in your browser. Instead, you must use a local server such as the Python SimpleHTTPServer.
