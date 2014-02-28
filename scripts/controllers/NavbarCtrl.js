@@ -1,5 +1,5 @@
 angular.module('chatUIApp')
-  .controller('NavbarCtrl', function ($scope, $location, UserAuthService) {
+  .controller('NavbarCtrl', function ($scope, $location) {
     'use strict';
 
     $scope.menuItems = [
@@ -15,7 +15,7 @@ angular.module('chatUIApp')
 
     $scope.logout = function() {
       // 1. Use UserAuthService to logout the user
-      // 2. 
+      // 2. Redirect user to a Home view or a Login view
     };
 
     // This function helps apply the `active` class to menu item
