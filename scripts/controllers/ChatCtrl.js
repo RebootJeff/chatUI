@@ -17,5 +17,15 @@ angular.module('chatUIApp')
       FakeMsgData.addMsg(newMsg);
     };
 
-    setTimeout(FakeMsgData.getData, 1000);
+    var rawData;
+    var refreshData = function(){
+      rawData = FakeMsgData.getData;
+      // scan messages for dates equal to today and switch their times to use
+      // moment.js `fromNow()` formatting
+
+      // group rawData into msgGroups
+      // $scope.msgGroups = ???;
+    };
+
+    setTimeout(refreshData, 1000);
   });
