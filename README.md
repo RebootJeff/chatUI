@@ -1,4 +1,4 @@
-# Coding Assignment: Chat UI
+# Chat UI
 
 ## Usage
 
