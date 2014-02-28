@@ -1,0 +1,18 @@
+<section class="msgs-wrapper">
+  <section class="msg-group" ng-repeat="msgGroup in msgGroups">
+    <ul class="msgs-list">
+      <li ng-repeat="msg in msgGroup.msgs">
+        {{msg.date}}, {{msg.time}} - {{msg.text}}
+      </li>
+    </ul>
+    <div class="author-info">
+      <img ng-src="msgGroup.author.avatar" class="avatar">
+      <p class="author-name">{{msgGroup.author.username}}</p>
+    </div>
+  </section>
+</section>
+
+<form class="chat-input-wrapper form-inline">
+  <input type="text">
+  <button>Send</button>
+</form>
