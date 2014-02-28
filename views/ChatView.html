@@ -1,4 +1,4 @@
-<section class="msgs-wrapper">
+<section class="msgs-wrapper" ng-controller="ChatCtrl">
   <section class="msg-group" ng-repeat="msgGroup in msgGroups | orderBy:['date', 'time']">
     <ul class="msgs-list  | orderBy:['date', 'time']">
       <li ng-repeat="msg in msgGroup.msgs">
