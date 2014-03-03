@@ -1,0 +1,20 @@
+<section class="msgs-wrapper">
+  <section class="msg-wrapper" ng-repeat="msg in msgs | orderBy:['date', 'time']">
+    <aside class="avatar-wrapper left">
+      <img ng-src="{{msg.author.avatar}}" class="avatar">
+    </aside>
+    <div class="msg-data right">
+      <p class="msg-body">{{msg.text}}</p>
+      <p class="author-name">{{msg.author.username}} - {{msg.date}}, {{msg.time}}</p>
+    </div>
+  </section>
+</section>
+
+<footer class="chat-input-wrapper">
+  <form class="form-inline" ng-submit="sendMsg(newMsgText)">
+    <input type="text" ng-model="newMsgText">
+    <!-- button would normally perform a POST request, but we will prevent that and
+         let ChatCtrl take over -->
+    <button class="send-btn">Send</button>
+  </form>
+</footer>

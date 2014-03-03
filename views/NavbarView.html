@@ -1,0 +1,10 @@
+<nav class="top-navbar">
+  <ul>
+    <li ng-repeat="menuItem in menuItems" ng-class="{active: isActive(menuItem.href)}">
+      <a ng-href="{{menuItem.href}}">{{menuItem.name}}</a>
+    </li>
+    <li ng-hide="currentUser"><a href="/login">Log In</a></li>
+    <li ng-hide="currentUser"><a href="/signup">Sign Up</a></li>
+    <li ng-show="currentUser"><a href="" ng-click="logout()">Log Out</a></li>
+  </ul>
+</nav>
