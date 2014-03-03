@@ -2,7 +2,7 @@ angular.module('chatUIApp')
   .controller('ChatCtrl', function($scope, $interval, FakeMsgData) {
     'use strict';
 
-    $scope.sendMsg = function(){
+    $scope.sendMsg = function(msgText){
       var timestamp = Date.now();
       var currentMoment = moment(timestamp);
       var newMsg = {
@@ -13,7 +13,7 @@ angular.module('chatUIApp')
         timestamp: timestamp,
         date: currentMoment.format('l'), // Format will be: m/d/yyyy
         time: currentMoment.format('H:mm'), // Format will be military time
-        text: $scope.newMsgText
+        text: msgText
       };
 
       FakeMsgData.addMsg(newMsg);
@@ -21,11 +21,10 @@ angular.module('chatUIApp')
 
     var refreshData = function(){
       $scope.msgs = FakeMsgData.getData();
-      // scan messages for dates equal to today and switch their times to use
-      // moment.js `fromNow()` formatting
+      // TODO: scan messages for dates equal to today and switch their times to
+      // use moment.js `fromNow()` formatting
 
       // TODO: group together consecutive msgs from a user (a la Facebook chat)
-
     };
 
     // Start off with immediate refresh
